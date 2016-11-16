@@ -31,12 +31,12 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/username"
+        android:id="@+id/userWord"
         android:background="@color/colorTextIcons"
         android:layout_above="@+id/playButton"
         android:layout_marginBottom="10dp"
         android:padding="5dp"
-        android:hint="Username"
+        android:hint="UserWord"
         android:layout_centerHorizontal="true" />
 
     <Button

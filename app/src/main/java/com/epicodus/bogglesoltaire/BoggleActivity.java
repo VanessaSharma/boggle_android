@@ -82,11 +82,12 @@ public class BoggleActivity extends AppCompatActivity {
     @Bind(R.id.start) EditText mStart;
     @Bind(R.id.lettersGrid) GridView mLettersGrid;
     @Bind(R.id.generateButton) Button mGenerateButton;
+    @Bind(R.id.enterWord) Button mEnterWord;
     private String[] vowels = new String[] {"A", "E", "I", "O", "U"};
     private String[] letters = new String[] { "B", "C", "D",
-            "F", "G", "H", "J",
-            "K", "L", "M", "N",
-            "P", "Q", "R", "S", "T",
+            "F", "G", "H", "H","H", "J",
+            "K", "L", "M", "N","N", "N",
+            "P", "Q", "R","R", "S","S", "T","T", "T",
              "V", "W", "X", "Y", "Z"};
     private ArrayList<String> randomLetters = new ArrayList<>();
 
@@ -97,6 +98,7 @@ public class BoggleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_boggle);
 
         ButterKnife.bind(this);
+        mEnterWord.setVisibility(View.INVISIBLE);
 
 
 
@@ -122,13 +124,20 @@ public class BoggleActivity extends AppCompatActivity {
                     ArrayAdapter adapter = new ArrayAdapter(BoggleActivity.this, android.R.layout.simple_list_item_1, randomLetters);
                     mLettersGrid.setAdapter(adapter);
                 } while (randomLetters.size() <8);
+
+                v.setVisibility(View.GONE);
+                mEnterWord.setVisibility(View.VISIBLE);
             }
         });
+
+//        mEnterWord.setOnClickListener(new View.OnClickListener() {
+//
+//        });
+
 
 
 
         Intent intent = getIntent();
-        String username = intent.getStringExtra("username");
-        mStart.setText("Start playing " + username);
+        String userWord = intent.getStringExtra("userWord");
     }
 }

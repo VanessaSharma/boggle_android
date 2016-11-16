@@ -41,4 +41,12 @@ tools:context="com.epicodus.bogglesoltaire.BoggleActivity">
     android:layout_below="@+id/lettersGrid"
     android:layout_centerHorizontal="true" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Word"
+        android:id="@+id/enterWord"
+        android:layout_above="@+id/generateButton"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

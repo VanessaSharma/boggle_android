@@ -43,7 +43,7 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
-    @Bind(R.id.username) EditText mUsername;
+    @Bind(R.id.userWord) EditText mUserWord;
     @Bind(R.id.playButton) Button mPlayButton;
     @Bind(R.id.boggleSoltaire) TextView mBoggleSoltaire;
 
@@ -61,11 +61,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String username = mUsername.getText().toString();
-                Log.d(TAG, username);
+                String userWord = mUserWord.getText().toString();
+                Log.d(TAG, userWord);
 
                 Intent intent = new Intent(MainActivity.this, BoggleActivity.class);
-                intent.putExtra("username", username);
+                intent.putExtra("userWord", userWord);
                 startActivity(intent);
             }
         });
