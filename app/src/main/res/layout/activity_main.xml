@@ -11,35 +11,39 @@
         android:layout_height="match_parent"
         android:id="@+id/imageView"
         android:src="@drawable/background"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Boggle Soltaire!"
-        android:layout_marginTop="126dp"
-        android:textColor="@color/colorTextIcons"
-        android:id="@+id/boggleSolitaireTextView"
+        android:layout_marginTop="54dp"
+        android:textColor="@color/material_grey_800"
+        android:id="@+id/boggleSoltaire"
+        android:textSize="60sp"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/playBoggleButton"
-        android:layout_alignStart="@+id/playBoggleButton" />
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/rollDiceEditText"
+        android:id="@+id/username"
         android:background="@color/colorTextIcons"
-        android:layout_above="@+id/playBoggleButton"
+        android:layout_above="@+id/playButton"
         android:layout_marginBottom="10dp"
         android:padding="5dp"
-        android:hint="Roll Dice!"
+        android:hint="Username"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Play!"
-        android:id="@+id/playBoggleButton"
+        android:id="@+id/playButton"
         android:background="@color/colorAccent"
         android:textColor="@color/colorTextIcons"
         android:layout_alignParentBottom="true"
