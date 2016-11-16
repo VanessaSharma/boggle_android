@@ -82,11 +82,12 @@ public class BoggleActivity extends AppCompatActivity {
     @Bind(R.id.start) EditText mStart;
     @Bind(R.id.lettersGrid) GridView mLettersGrid;
     @Bind(R.id.generateButton) Button mGenerateButton;
-    private String[] letters = new String[] {"A", "B", "C", "D", "E",
-            "F", "G", "H", "I", "J",
-            "K", "L", "M", "N", "O",
+    private String[] vowels = new String[] {"A", "E", "I", "O", "U"};
+    private String[] letters = new String[] { "B", "C", "D",
+            "F", "G", "H", "J",
+            "K", "L", "M", "N",
             "P", "Q", "R", "S", "T",
-            "U", "V", "W", "X", "Y", "Z"};
+             "V", "W", "X", "Y", "Z"};
     private ArrayList<String> randomLetters = new ArrayList<>();
 
 
@@ -110,7 +111,17 @@ public class BoggleActivity extends AppCompatActivity {
                     randomLetters.add(theLetter);
                     ArrayAdapter adapter = new ArrayAdapter(BoggleActivity.this, android.R.layout.simple_list_item_1, randomLetters);
                     mLettersGrid.setAdapter(adapter);
-                }while (randomLetters.size() <8);
+                }while (randomLetters.size() <6);
+
+                do {
+                    Random random = new Random();
+                    int randomNumber = random.nextInt(vowels.length);
+                    String theVowel = vowels[randomNumber];
+                    Log.d(TAG, theVowel);
+                    randomLetters.add(theVowel);
+                    ArrayAdapter adapter = new ArrayAdapter(BoggleActivity.this, android.R.layout.simple_list_item_1, randomLetters);
+                    mLettersGrid.setAdapter(adapter);
+                } while (randomLetters.size() <8);
             }
         });
 
